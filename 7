@@ -1,0 +1,19 @@
+1.Нужно создать php файл, который будет выводить hello(например hello.php)
+
+//hello.php
+<?php
+echo "Hello\n";
+
+2. Настроить cron для периодического выполнения
+
+* * * * * /usr/bin/php /path/to/hello.php
+* * * * * sleep 15; /usr/bin/php /path/to/hello.php
+* * * * * sleep 30; /usr/bin/php /path/to/hello.php
+* * * * * sleep 45; /usr/bin/php /path/to/hello.php
+
+Стандартный cron обычно позволяет запускать задачи минимум раз в минуту, а нам нужно — каждые 15 секунд. 
+Чтобы обойти это ограничение, мы можем добавить несколько cron-заданий, запуская скрипт каждую четверть минуты.
+
+3. Сохранить файл и запустить cron 
+
+sudo service cron start

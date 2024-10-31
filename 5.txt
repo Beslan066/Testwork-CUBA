@@ -1,0 +1,9 @@
+Первое отличие функций function f(a,b) { return a+b }и var f = function(a,b) { return a+b } это же тип их объявления: Function Declaration и Function Expression
+
+Function Declaration полностью поднимается в начало своего контекста (например, функции или скрипта). Это значит, что функцию можно вызвать до ее объявления в коде, и она все равно будет работать.
+Если попытаться вызвать Function Expression 
+
+console.log(f(2, 3)); 
+var f = function(a, b) { return a + b; } 
+
+мы получим ошибку "Ошибка: f не является функцией"
